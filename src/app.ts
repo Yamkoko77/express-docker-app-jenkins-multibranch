@@ -29,7 +29,7 @@ app.get("/api/health", (_: Request, res: Response) => {
 // GET /api/ykk
 app.get("/api/ykk", (_: Request, res: Response) => {
   res.json({
-    message: "YKK",
+    message: "YKK!",
   });
 });
 
