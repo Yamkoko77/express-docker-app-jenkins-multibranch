@@ -41,12 +41,6 @@ pipeline {
     // ใช้ agent any เพราะ build จะทำงานบน Jenkins controller (Linux container) อยู่แล้ว
     agent any
 
-    tools: {
-        // กำหนด Node.js version ที่ติดตั้งบน Jenkins (ต้องติดตั้ง NodeJS plugin ก่อน)
-        nodejs 'nodejs-22'   // ชื่อ Node.js installation ที่ตั้งค่าไว้ใน Jenkins
-        dockerTool 'Docker' // ชื่อ Docker installation ที่ตั้งค่าไว้ใน Jenkins
-    }
-
     // กัน “เช็คเอาต์ซ้ำซ้อน”
     // ถ้า job เป็นแบบ Pipeline from SCM / Multibranch แนะนำเพิ่ม options { skipDefaultCheckout(true) }
     // เพื่อปิดการ checkout อัตโนมัติก่อนเข้า stages (เพราะเรามี checkout scm อยู่แล้ว)
